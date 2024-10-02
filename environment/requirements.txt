@@ -1,0 +1,8 @@
+numpy
+rotary-embedding-torch
+performer-pytorch
+pytest
+flake8
+ipython
+boto3
+tqdm
