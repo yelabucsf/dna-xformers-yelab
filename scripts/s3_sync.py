@@ -13,7 +13,7 @@ logging.basicConfig(filename='logs/s3_sync.log', level=logging.INFO,
 s3 = boto3.client('s3')
 
 # S3 bucket name
-BUCKET_NAME = 'dna-deeplearn-yelab'
+BUCKET_NAME = 'dna-xformers-yelab'
 
 def upload_file(file_path, bucket, object_name=None):
     """Upload a file to an S3 bucket"""

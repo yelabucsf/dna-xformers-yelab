@@ -68,7 +68,7 @@ This project includes functionality to sync data and models with an AWS S3 bucke
 
 ### Usage
 
-To sync data and models with the S3 bucket `dna-deeplearn-yelab`:
+To sync data and models with the S3 bucket `dna-xformers-yelab`:
 
 ```bash
 ./scripts/run_s3_sync.sh <direction> <main_dir> [subdirectory]
@@ -89,7 +89,7 @@ Examples:
   ./scripts/run_s3_sync.sh from_s3 data results/analysis
   ```
 
-The scripts will use the S3 bucket named `dna-deeplearn-yelab` for all sync operations.
+The scripts will use the S3 bucket named `dna-xformers-yelab` for all sync operations.
 
 ## Note on PyTorch
 
