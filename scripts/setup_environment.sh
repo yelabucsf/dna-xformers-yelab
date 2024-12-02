@@ -9,32 +9,35 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-setup_python() {
-    echo "Setting up Python environment..."
+setup_dna_mdl() {
+    echo "Setting up DNA modeling environment..."
     
     if ! command_exists python3; then
         echo "Python 3 is not installed. Please install Python 3 and try again."
         exit 1
     fi
 
+    # Create envs directory if it doesn't exist
+    mkdir -p envs
+
     # Create virtual environment with access to system-site-packages if it doesn't exist
-    if [ ! -d "venv" ]; then
+    if [ ! -d "envs/dna_mdl" ]; then
         echo "Creating virtual environment with system-site-packages..."
-        python3 -m venv venv --system-site-packages
+        python3 -m venv envs/dna_mdl --system-site-packages
     fi
 
     # Activate virtual environment
     echo "Activating virtual environment..."
-    source venv/bin/activate
+    source envs/dna_mdl/bin/activate
 
     # Upgrade pip
     echo "Upgrading pip..."
     pip install --upgrade pip
 
-    # Install requirements
-    python setup.py install
+    # Install package in editable mode with requirements
+    pip install -e .
 
-    echo "Python environment setup complete."
+    echo "DNA modeling environment setup complete."
 }
 
 # Function to setup additional components
@@ -58,11 +61,11 @@ main() {
     echo "Starting environment setup..."
 
     # Run setup functions
-    setup_python
+    setup_dna_mdl
     setup_additional
 
     echo "Environment setup complete!"
-    echo "To activate the Python environment, run: source venv/bin/activate"
+    echo "To activate the DNA modeling environment, run: source envs/dna_mdl/bin/activate"
 }
 
 # Run the main function

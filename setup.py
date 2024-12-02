@@ -26,7 +26,7 @@ with open('environment/requirements.txt') as f:
     required = f.read().splitlines()
 
 setup(
-    name="dnaformer",
+    name="dna_mdl",
     version="0.1.0",
     description="DNA sequence modeling tools for internal analyses",
     packages=find_packages(where="src"),
