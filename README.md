@@ -28,7 +28,7 @@ This project uses Python 3.8+ and R 4.0+. To set up the project environment:
 
 1. Activate the Python virtual environment:
    ```
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   source envs/dna_mdl/bin/activate
    ```
 
 2. Run an analysis:
@@ -47,7 +47,7 @@ For a detailed explanation of the project structure, see [project_structure.md](
 in `docs/`.
 
 TLDR:
-- Custom python modules that include models like transformers with rotary embeddings are in `./src/code`.
+- Custom python modules that include models like transformers with rotary embeddings are in `./src/dna_mdl`.
 - Scripts to analyze the data and generate the results are in `./analyses`.
 - Trained models can be stored in `./models`.
 - Custom bash and R reusable scripts can be stored `./scripts`.
